@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-//A function for clearing screen
+//A function for clearing screen (Cross Platform)
 void clear_screen()
 {
 #ifdef _WIN32
@@ -21,13 +21,15 @@ class ffmpeg
 private:
     std::vector<std::string> encodes;
     std::vector<int> crf;
+    std::vector<int> audiobitrate;
 
 public:
     //Vars
     int selected;
     std::string video_name;
     int selected_crf;
-
+    int selected_audioBitrate;
+    bool is_ab_selected = false;
     //Methods
     ffmpeg();
     ~ffmpeg();
@@ -102,6 +104,88 @@ public:
         }
         }
     }
+
+    void select_audioBitrate()
+    {
+        int choice;
+        int ab1 = 96;
+        int ab2 = 128;
+        int ab3 = 192;
+        int ab4 = 256;
+        int ab5 = 320;
+        audiobitrate.push_back(ab1);
+        audiobitrate.push_back(ab2);
+        audiobitrate.push_back(ab3);
+        audiobitrate.push_back(ab4);
+        audiobitrate.push_back(ab5);
+
+        //Asking if the user need the option or not
+        std::cout << "Do you want to specify the -ab option:";
+        std::cout << std::endl;
+        std::cout << "1. Yes";
+        std::cout << std::endl;
+        std::cout << "2. No";
+        std::cout << std::endl;
+
+        std::cout << "Your choice: ";
+        std::cin >> choice;
+
+        if (choice == 1)
+        {
+            is_ab_selected = true;
+            //showing the audioBitrate
+            for (int i = 0; i < audiobitrate.size(); i++)
+            {
+                std::cout << (i + 1) << ". " << audiobitrate[i] << std::endl;
+            }
+
+            //Taking the audioBitrate
+            std::cout << "Input your choice: ";
+            std::cin >> choice;
+
+            switch (choice)
+            {
+            case 1:
+            {
+                selected_audioBitrate = ab1;
+                break;
+            }
+            case 2:
+            {
+                selected_audioBitrate = ab2;
+                break;
+            }
+            case 3:
+            {
+                selected_audioBitrate = ab3;
+                break;
+            }
+            case 4:
+            {
+                selected_audioBitrate = ab4;
+                break;
+            }
+            case 5:
+            {
+                selected_audioBitrate = ab5;
+                break;
+            }
+            default:
+            {
+                std::cout << "No audioBitrate selected going with default 128";
+                std::cout << std::endl;
+                selected_audioBitrate = 128;
+            }
+            }
+        }
+        else
+        {
+            is_ab_selected = false;
+            std::cout << "Going without -ab option";
+            std::cout << std::endl;
+        }
+    }
+
     void h264()
     {
         //Taking the video name input
@@ -118,7 +202,15 @@ public:
         //preparing the prefix and suffix code for ffmpeg convertion
         std::cout << std::endl;
         std::cout << std::endl;
-        std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -crf "<<selected_crf<<" " << video_name << ".encoded.mp4";
+        if (is_ab_selected = true)
+        {
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -ab "<<selected_audioBitrate<<"k "<< "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
+
+        }
+        else
+        {
+        std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -crf " << selected_crf << " " << video_name << ".encoded.mp4";
+        }
         std::cout << std::endl;
         std::cout << std::endl;
     }
@@ -131,6 +223,7 @@ public:
         case 1: //h264
         {
             select_crf();
+            select_audioBitrate();
             do
             {
                 h264();
