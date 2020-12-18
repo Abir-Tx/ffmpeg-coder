@@ -22,6 +22,7 @@ private:
     std::vector<std::string> encodes;
     std::vector<int> crf;
     std::vector<int> audiobitrate;
+    std::vector<int> videobitrate;
 
 public:
     //Vars
@@ -30,6 +31,9 @@ public:
     int selected_crf;
     int selected_audioBitrate;
     bool is_ab_selected = false;
+    int selected_videoBitrate;
+    bool is_vb_selected = false;
+
     //Methods
     ffmpeg();
     ~ffmpeg();
@@ -185,6 +189,91 @@ public:
             std::cout << std::endl;
         }
     }
+    void select_videoBitrate()
+    {
+        /* Type	Video Bitrate, Standard Frame Rate
+    (24, 25, 30)
+    Video Bitrate, High Frame Rate
+    (48, 50, 60)
+    2160p (4K)	35–45 Mbps	53–68 Mbps
+    1440p (2K)	16 Mbps	24 Mbps
+    1080p	8 Mbps	12 Mbps
+    720p	5 Mbps	7.5 Mbps
+    480p	2.5 Mbps	4 Mbps
+    360p	1 Mbps	1.5 Mbps
+    */
+
+        using namespace std;
+
+        int choice;
+        int vb1, vb2, vb3, vb4, vb5, vb6;
+        vb1 = 35; //4k
+        vb2 = 18;
+        vb3 = 8;
+        vb4 = 5;
+        vb5 = 3; //480p
+        vb6 = 1; //360p
+
+        //loading the video bitrates to the vector
+        videobitrate.push_back(vb1);
+        videobitrate.push_back(vb2);
+        videobitrate.push_back(vb3);
+        videobitrate.push_back(vb4);
+        videobitrate.push_back(vb5);
+        videobitrate.push_back(vb6);
+        //Asking the user
+        cout << "Do you want to specify video bitrates?" << endl;
+        cout << "1. Yes" << endl
+             << "2. No" << endl;
+        cout << "Your choice: ";
+        cin >> choice;
+
+        if (choice == 1)
+        {
+            is_vb_selected = true;
+            for (int i = 0; i < videobitrate.size(); i++)
+            {
+                cout << (i + 1) << ". " << videobitrate[i] << endl;
+            }
+            cout << "Your choice:";
+            cin >> choice;
+
+            switch (choice)
+            {
+            case 1:
+                selected_videoBitrate = vb1;
+                break;
+            case2:
+                selected_videoBitrate = vb2;
+                break;
+            case 3:
+                selected_videoBitrate = vb3;
+                break;
+            case 4:
+                selected_videoBitrate = vb4;
+                break;
+            case 5:
+                selected_videoBitrate = vb5;
+                break;
+            case 6:
+                selected_videoBitrate = vb6;
+                break;
+
+            default:
+                cout << "No video bitrate selected. Going with the default 8 MBPS";
+                std::cout << std::endl;
+                selected_videoBitrate = vb3;
+                break;
+            }
+        }
+        else
+        {
+            is_vb_selected = false;
+            std::cout << "Going without -vb option";
+            std::cout << std::endl;
+        }
+        
+    }
 
     void h264()
     {
@@ -204,12 +293,17 @@ public:
         std::cout << std::endl;
         if (is_ab_selected = true)
         {
-            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -ab "<<selected_audioBitrate<<"k "<< "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
-
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -ab " << selected_audioBitrate << "k "
+                      << "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
+        }
+        else if (is_vb_selected = true)
+        {
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -vb " << selected_videoBitrate << "k "
+                      << "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
         }
         else
         {
-        std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -crf " << selected_crf << " " << video_name << ".encoded.mp4";
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -crf " << selected_crf << " " << video_name << ".encoded.mp4";
         }
         std::cout << std::endl;
         std::cout << std::endl;
@@ -224,6 +318,7 @@ public:
         {
             select_crf();
             select_audioBitrate();
+            select_videoBitrate();
             do
             {
                 h264();
