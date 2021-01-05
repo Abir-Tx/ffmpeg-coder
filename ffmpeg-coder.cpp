@@ -46,7 +46,7 @@ public:
     };
     void show_encodes()
     {
-        std::cout<<"Which video encoding do you prefer: "<<std::endl;
+        std::cout << "Which video encoding do you prefer: " << std::endl;
         for (int i = 0; i < encodes.size(); i++)
         {
             std::cout << (i + 1) << ". " << encodes[i] << std::endl;
@@ -71,9 +71,9 @@ public:
         crf.push_back(28);
 
         //showing the crf
-        std::cout<<"Note: Higher the CRF value more the compression";
-        std::cout<<std::endl;
-        std::cout<<"Select CRF value: "<<std::endl;
+        std::cout << "Note: Higher the CRF value more the compression";
+        std::cout << std::endl;
+        std::cout << "Select CRF value: " << std::endl;
         for (int i = 0; i < crf.size(); i++)
         {
             std::cout << (i + 1) << ". " << crf[i] << std::endl;
@@ -234,8 +234,8 @@ public:
         cout << "Your choice: ";
         cin >> choice;
 
-        std::cout<<"Select the appropriate video bitrate (default is 8 MBPS): ";
-        std::cout<<std::endl;
+        std::cout << "Select the appropriate video bitrate (default is 8 MBPS): ";
+        std::cout << std::endl;
         if (choice == 1)
         {
             is_vb_selected = true;
@@ -286,24 +286,23 @@ public:
     void h264()
     {
         //Taking the video name input
-        std::cout<<"Note: Video file names with space does not work.";
-        std::cout<<std::endl;
         std::cout << "Please input the video file name without file extension: ";
         // getline(std::cin, video_name);
         std::cin >> video_name;
         clear_screen();
+        std::cout << "Note: Video file names with space does not work.";
+        std::cout << std::endl;
         std::cout << "NB: Input -1 to Exit the input loop";
         std::cout << std::endl;
 
-        std::cout << "Your input video file name is: " << video_name;
+        std::cout << "Your inputted video file's name is: " << video_name;
         std::cout << std::endl;
 
         //preparing the prefix and suffix code for ffmpeg convertion
+        std::cout << "Generated code to run in your CLI in the specified video file Directory: ";
         std::cout << std::endl;
         std::cout << std::endl;
-        std::cout<<"Generated code to run in your CLI in the specified video file Directory: ";
-        std::cout<<std::endl;
-        
+
         if (is_ab_selected = true)
         {
             std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -ab " << selected_audioBitrate << "k "
@@ -330,7 +329,7 @@ public:
         case 1: //h264
         {
             select_crf();
-            // select_audioBitrate();                           
+            // select_audioBitrate();
             select_videoBitrate();
             do
             {
@@ -355,8 +354,9 @@ void title()
     using namespace std;
     cout << "\t\t\tFFMPEG Coder"
          << endl;
-    cout<<"\t\tBy Abir-Tx"<<endl;
-    cout<<"___________________________________\n"<<endl;
+    cout << "\t\tBy Abir-Tx" << endl;
+    cout << "___________________________________\n"
+         << endl;
 }
 void about()
 {
@@ -365,7 +365,7 @@ void about()
 
     about_ffmpeg_coder = "FFMPEG Coder is a CLI tool created by Mushfiqur Rahman Abir AKA Abir-Tx.The tool is now in beta for testing purpose only and not much ready for use. Updates will be added soon";
 
-    std::cout<<about_ffmpeg_coder;
+    std::cout << about_ffmpeg_coder;
 }
 
 //Home page of the tool
@@ -409,10 +409,10 @@ void homepage()
     }
     else if (choice == 3)
     {
-        std::cout<<"Exiting the program..............."<<std::endl;
+        std::cout << "Exiting the program..............." << std::endl;
         exit(0);
     }
-    else 
+    else
     {
         exit(0);
     }
