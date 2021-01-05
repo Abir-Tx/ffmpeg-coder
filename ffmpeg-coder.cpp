@@ -340,8 +340,19 @@ ffmpeg::~ffmpeg()
 void title()
 {
     using namespace std;
-    cout << "FFMPEG Coder\n"
+    cout << "\t\t\tFFMPEG Coder"
          << endl;
+    cout<<"\t\tBy Abir-Tx"<<endl;
+    cout<<"___________________________________\n"<<endl;
+}
+void about()
+{
+    clear_screen();
+    std::string about_ffmpeg_coder;
+
+    about_ffmpeg_coder = "FFMPEG Coder is a CLI tool created by Mushfiqur Rahman Abir AKA Abir-Tx.The tool is now in beta for testing purpose only and not much ready for use. Updates will be added soon";
+
+    std::cout<<about_ffmpeg_coder;
 }
 
 //Home page of the tool
@@ -349,9 +360,6 @@ void homepage()
 {
     using namespace std;
 
-    //Clearing the screen
-    clear_screen();
-    
     ffmpeg ffmpeg; //Creating ffmpeg object
     int choice;
 
@@ -382,10 +390,17 @@ void homepage()
         ffmpeg.select_encodes();
         ffmpeg.selected_action();
     }
+    else if (choice == 2)
+    {
+        about();
+    }
 }
 
 int main()
 {
+    //Clearing the screen
+    clear_screen();
+
     title();
     homepage();
 }
