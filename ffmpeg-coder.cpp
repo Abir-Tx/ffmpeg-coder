@@ -349,6 +349,9 @@ void homepage()
 {
     using namespace std;
 
+    //Clearing the screen
+    clear_screen();
+    
     ffmpeg ffmpeg; //Creating ffmpeg object
     int choice;
 
