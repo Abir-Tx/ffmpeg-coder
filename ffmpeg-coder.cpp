@@ -286,6 +286,8 @@ public:
     void h264()
     {
         //Taking the video name input
+        std::cout<<"Note: Video file names with space does not work.";
+        std::cout<<std::endl;
         std::cout << "Please input the video file name without file extension: ";
         // getline(std::cin, video_name);
         std::cin >> video_name;
