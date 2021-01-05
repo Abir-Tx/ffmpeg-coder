@@ -46,6 +46,7 @@ public:
     };
     void show_encodes()
     {
+        std::cout<<"Which video encoding do you prefer: "<<std::endl;
         for (int i = 0; i < encodes.size(); i++)
         {
             std::cout << (i + 1) << ". " << encodes[i] << std::endl;
@@ -62,6 +63,7 @@ public:
     //ENCODERS ACTIONS
     void select_crf()
     {
+        clear_screen();
         int choice;
         crf.push_back(20);
         crf.push_back(24);
@@ -69,6 +71,9 @@ public:
         crf.push_back(28);
 
         //showing the crf
+        std::cout<<"Note: Higher the CRF value more the compression";
+        std::cout<<std::endl;
+        std::cout<<"Select CRF value: "<<std::endl;
         for (int i = 0; i < crf.size(); i++)
         {
             std::cout << (i + 1) << ". " << crf[i] << std::endl;
@@ -191,6 +196,7 @@ public:
     }
     void select_videoBitrate()
     {
+        clear_screen();
         /* Type	Video Bitrate, Standard Frame Rate
     (24, 25, 30)
     Video Bitrate, High Frame Rate
@@ -228,6 +234,8 @@ public:
         cout << "Your choice: ";
         cin >> choice;
 
+        std::cout<<"Select the appropriate video bitrate (default is 8 MBPS): ";
+        std::cout<<std::endl;
         if (choice == 1)
         {
             is_vb_selected = true;
@@ -272,13 +280,13 @@ public:
             std::cout << "Going without -vb option";
             std::cout << std::endl;
         }
-        
+        clear_screen();
     }
 
     void h264()
     {
         //Taking the video name input
-        std::cout << "Please input the video file name: ";
+        std::cout << "Please input the video file name without file extension: ";
         // getline(std::cin, video_name);
         std::cin >> video_name;
         clear_screen();
@@ -291,6 +299,9 @@ public:
         //preparing the prefix and suffix code for ffmpeg convertion
         std::cout << std::endl;
         std::cout << std::endl;
+        std::cout<<"Generated code to run in your CLI in the specified video file Directory: ";
+        std::cout<<std::endl;
+        
         if (is_ab_selected = true)
         {
             std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -ab " << selected_audioBitrate << "k "
@@ -317,7 +328,7 @@ public:
         case 1: //h264
         {
             select_crf();
-            select_audioBitrate();
+            // select_audioBitrate();                           
             select_videoBitrate();
             do
             {
@@ -393,6 +404,15 @@ void homepage()
     else if (choice == 2)
     {
         about();
+    }
+    else if (choice == 3)
+    {
+        std::cout<<"Exiting the program..............."<<std::endl;
+        exit(0);
+    }
+    else 
+    {
+        exit(0);
     }
 }
 
