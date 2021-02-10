@@ -1,4 +1,5 @@
-/* A C++ program code by Mushfiqur Rahman Abir  */
+#if !defined(FFMPEG_CODER_H)
+#define FFMPEG_CODER_H
 
 #include <iostream>
 #include <vector>
@@ -418,11 +419,4 @@ void homepage()
     }
 }
 
-int main()
-{
-    //Clearing the screen
-    clear_screen();
-
-    title();
-    homepage();
-}
+#endif // FFMPEG_CODER_H

@@ -30,4 +30,9 @@
 *.exe
 *.out
 *.app
-ffmpeg-coder
+*.o
+
+
+#project extras
+bin/*
+
