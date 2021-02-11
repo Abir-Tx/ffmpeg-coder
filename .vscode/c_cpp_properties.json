@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include/ffmpeg-coder/**",
-                "${workspaceFolder}/include/**"
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/lib"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
@@ -18,10 +19,27 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include/ffmpeg-coder/**",
-                "${workspaceFolder}/include/**"
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/lib"
+
             ],
             "defines": [],
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "cStandard": "${default}",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "${default}"
+        },
+        {
+            "name": "Surface",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/ffmpeg-coder/**",
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/lib"
+
+            ],
+            "defines": [],
+            "compilerPath": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin",
             "cStandard": "${default}",
             "cppStandard": "c++14",
             "intelliSenseMode": "${default}"
