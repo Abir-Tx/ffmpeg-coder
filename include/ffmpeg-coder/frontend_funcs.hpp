@@ -8,13 +8,10 @@
 //Functions
 void title()
 {
-    using namespace std;
-    cout << "\t\t\tFFMPEG Coder"
-         << endl;
-    cout << "\t\tBy Abir-Tx" << endl;
-    cout << "___________________________________\n"
-         << endl;
+    decorateMe("FFMPEG Coder");
 }
+
+
 void about()
 {
     clear_screen();

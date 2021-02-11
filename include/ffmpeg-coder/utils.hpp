@@ -15,4 +15,23 @@ void clear_screen()
 #endif
 }
 
+// Function for dynamically decorating a text
+void decorateMe(std::string textToDecor){
+    int chars = textToDecor.capacity();
+    int counter = 0;
+    std::cout<<std::endl;
+    for (int i =0 ; i<(chars*2); i++){
+        std::cout<<"_";
+    }
+    std::cout<<std::endl;
+    std::cout<<textToDecor;
+    std::cout<<std::endl;
+    for (int i =0 ; i<(chars*2); i++){
+        std::cout<<"_";
+    }
+    std::cout<<std::endl;
+    std::cout<<std::endl;
+    
+}
+
 #endif // UTILS_H
