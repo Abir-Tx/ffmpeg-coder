@@ -16,6 +16,7 @@ all: build run
 
 .PHONY: build
 build:
+	mkdir bin
 	${CC} ${CFLAG} ${SRCDIR}/${APPNAME}.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.o
 
 .PHONY: clean
@@ -32,6 +33,7 @@ run:
 # Windows Configs for make
 .PHONY: winbuild
 winbuild:
+	mkdir bin
 	${CC} ${CFLAG} ${SRCDIR}/${APPNAME}.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.exe
 
 .PHONY: winrun
