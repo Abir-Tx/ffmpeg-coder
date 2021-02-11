@@ -7,7 +7,7 @@ CC := g++
 SRCDIR := src
 BUILDDIR := bin
 CFLAG := -v
-INC := -I include/ffmpeg-coder
+INC := -I include/ffmpeg-coder -I lib
 APPNAME := ffmpeg-coder
 
 .PHONY: all
