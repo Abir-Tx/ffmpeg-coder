@@ -1,0 +1,4 @@
+FFMPEG-CODER is a CLI (Command Line Interface) tool created by Mushfiqur Rahman Abir AKA Abir-Tx which generate prefered encoding
+commands in a very easy way for the well known FFMPEG tool usage. 
+The aim of this tool is to simplify the commands needed for encoding a video. You can use this tool to generate the commands and then copy the commans 
+and issue them in the ffmpeg tool to encode the video present in that directory.

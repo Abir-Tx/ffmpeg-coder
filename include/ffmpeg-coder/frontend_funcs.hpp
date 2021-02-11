@@ -5,6 +5,7 @@
 #include <vector>
 #include "utils.hpp"
 #include "ffmpeg_coder.hpp"
+#include <fstream>
 //Functions
 void title()
 {
@@ -16,10 +17,11 @@ void about()
 {
     clear_screen();
     std::string about_ffmpeg_coder;
+    std::ifstream read_about("res/about.bin");
 
-    about_ffmpeg_coder = "FFMPEG Coder is a CLI tool created by Mushfiqur Rahman Abir AKA Abir-Tx.The tool is now in beta for testing purpose only and not much ready for use. Updates will be added soon";
-
-    std::cout << about_ffmpeg_coder;
+    while (getline(read_about, about_ffmpeg_coder)){
+        std::cout<<about_ffmpeg_coder;
+    }
 }
 
 //Home page of the tool
