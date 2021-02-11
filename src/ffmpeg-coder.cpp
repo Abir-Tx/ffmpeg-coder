@@ -5,7 +5,6 @@
 
 int main()
 {
-    //Clearing the screen
     clear_screen();
     title();
     homepage();

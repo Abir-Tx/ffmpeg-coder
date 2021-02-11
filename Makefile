@@ -27,3 +27,14 @@ clean:
 run:
 	echo "Running the built program...."
 	./${BUILDDIR}/${APPNAME}.o
+
+
+# Windows Configs for make
+.PHONY: winbuild
+winbuild:
+	${CC} ${CFLAG} ${SRCDIR}/${APPNAME}.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.exe
+
+.PHONY: winrun
+winrun:
+	echo "Running the built program...."
+	./${BUILDDIR}/${APPNAME}.exe
