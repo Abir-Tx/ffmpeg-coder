@@ -273,8 +273,7 @@ public:
         clear_screen();
     }
 
-    void h264()
-    {
+    void take_videoName(){
         //Taking the video name input
         std::cout << "Please input the video file name without file extension: ";
         // getline(std::cin, video_name);
@@ -292,40 +291,69 @@ public:
         std::cout << "Generated code to run in your CLI in the specified video file Directory: ";
         std::cout << std::endl;
         std::cout << std::endl;
+    }
 
+    void generateCodes(std::string videoEncoding)
+    {
         if (is_ab_selected = true)
         {
-            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -ab " << selected_audioBitrate << "k "
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec "<<videoEncoding<<" -acodec aac -ab " << selected_audioBitrate << "k "
                       << "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
         }
         else if (is_vb_selected = true)
         {
-            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -vb " << selected_videoBitrate << "k "
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec "<<videoEncoding<<" -acodec aac -vb " << selected_videoBitrate << "k "
                       << "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
         }
         else
         {
-            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec h264 -acodec aac -crf " << selected_crf << " " << video_name << ".encoded.mp4";
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec "<<videoEncoding<<" -acodec aac -crf " << selected_crf << " " << video_name << ".encoded.mp4";
         }
         std::cout << std::endl;
         std::cout << std::endl;
     }
 
+    void h264()
+    {
+        take_videoName();
+        std::string videoEncoding = "h264";
+        generateCodes(videoEncoding);
+    }
+
+    void libx265()
+    {
+        take_videoName();
+        std::string videoEncoding = "libx265";
+        generateCodes(videoEncoding);
+    }
+
+// method to load all the needed modules
     void selected_action()
     {
         using namespace std;
         switch (selected)
         {
-        case 1: //h264
-        {
-            select_crf();
-            // select_audioBitrate();
-            select_videoBitrate();
-            do
+            case 1: //h264
             {
-                h264();
-            } while (video_name != "-1");
-        }
+                select_crf();
+                // select_audioBitrate();
+                select_videoBitrate();
+                do
+                {
+                    h264();
+                } while (video_name != "-1");
+                break;
+            }
+            case 2:
+            {
+                select_crf();
+                select_videoBitrate();
+                do
+                {
+                    libx265();
+                } while (video_name != "-1");
+                break;
+            }
         }
     }
 };
