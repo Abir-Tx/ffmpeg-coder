@@ -78,7 +78,7 @@ void homepage()
             exit(0);
         }
 
-        std::cout << "Do you want to go to Home screen[Y/N]: ";
+        std::cout << "\n\nDo you want to go to Home screen[Y/N]: ";
         std::cin >> goBack;
     } while (goBack == 'Y');
 }
