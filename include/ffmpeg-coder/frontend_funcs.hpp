@@ -36,6 +36,7 @@ void homepage()
     char goBack;
     do
     {
+        clear_screen();
         cout << "Choose your option: " << endl;
 
         //Adding the options to the homepage menu (Main menu)
