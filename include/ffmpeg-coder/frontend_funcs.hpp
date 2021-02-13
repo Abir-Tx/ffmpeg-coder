@@ -46,7 +46,7 @@ void settings()
     case 1:
     {
         S_Lock slock;
-        slock.setupLock();
+        slock.showOptions();
         break;
     }
 
