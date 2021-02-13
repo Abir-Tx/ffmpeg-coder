@@ -1,9 +1,11 @@
 #if !defined(S_LOCK_H)
 #define S_LOCK_H
 
+#include "rang.hpp"
 #include <iostream>
 #include <fstream>
 #include <bitset>
+#include "utils.hpp"
 
 class S_Lock
 {
@@ -114,24 +116,28 @@ public:
 
     void showOptions()
     {
+        clear_screen();
         int chosenOption;
         std::string availableOptions[2] = {"Setup Lock", "Delete Lock"};
 
         std::cout << "1. " << availableOptions[0] << std::endl;
         std::cout << "2. " << availableOptions[1] << std::endl;
-
+        std::cout<<rang::bg::cyan<<"\nYour choice: "<<rang::bg::reset;
         std::cin>>chosenOption;
 
         if (chosenOption == 1)
         {
+            clear_screen();
             setupLock();
         }
         else if (chosenOption == 2)
         {
+            clear_screen();
             deleteLock();
         }
         else
         {
+            clear_screen();
             std::cout<<"Invalid Option";
             std::cout<<std::endl;
         }
@@ -145,10 +151,6 @@ public:
         std::cin>>givenPassphrase;
 
         std::ifstream passReader ("usrData/passphrase.bin");
-        /* while(getline(passReader, storedPassphrase))
-        {
-            storedPassphrase = storedPassphrase;
-        } */
 
         passReader >> storedPassphrase;
 
@@ -158,6 +160,7 @@ public:
         }
         else
         {
+            clear_screen();
             std::cout<<"Wrong passphrase !!";
             return false;
         }
