@@ -75,32 +75,32 @@ public:
 
         switch (choice)
         {
-        case 1:
-        {
-            selected_crf = 20;
-            break;
-        }
-        case 2:
-        {
-            selected_crf = 24;
-            break;
-        }
-        case 3:
-        {
-            selected_crf = 26;
-            break;
-        }
-        case 4:
-        {
-            selected_crf = 28;
-            break;
-        }
-        default:
-        {
-            std::cout << "No CRF selected going with default 24";
-            std::cout << std::endl;
-            selected_crf = 24;
-        }
+            case 1:
+            {
+                selected_crf = 20;
+                break;
+            }
+            case 2:
+            {
+                selected_crf = 24;
+                break;
+            }
+            case 3:
+            {
+                selected_crf = 26;
+                break;
+            }
+            case 4:
+            {
+                selected_crf = 28;
+                break;
+            }
+            default:
+            {
+                std::cout << "No CRF selected going with default 24";
+                std::cout << std::endl;
+                selected_crf = 24;
+            }
         }
     }
 
@@ -188,16 +188,16 @@ public:
     {
         clear_screen();
         /* Type	Video Bitrate, Standard Frame Rate
-    (24, 25, 30)
-    Video Bitrate, High Frame Rate
-    (48, 50, 60)
-    2160p (4K)	35–45 Mbps	53–68 Mbps
-    1440p (2K)	16 Mbps	24 Mbps
-    1080p	8 Mbps	12 Mbps
-    720p	5 Mbps	7.5 Mbps
-    480p	2.5 Mbps	4 Mbps
-    360p	1 Mbps	1.5 Mbps
-    */
+        (24, 25, 30)
+        Video Bitrate, High Frame Rate
+        (48, 50, 60)
+        2160p (4K)	35–45 Mbps	53–68 Mbps
+        1440p (2K)	16 Mbps	24 Mbps
+        1080p	8 Mbps	12 Mbps
+        720p	5 Mbps	7.5 Mbps
+        480p	2.5 Mbps	4 Mbps
+        360p	1 Mbps	1.5 Mbps
+        */
 
         using namespace std;
 
@@ -241,7 +241,7 @@ public:
             case 1:
                 selected_videoBitrate = vb1;
                 break;
-            case2:
+            case 2:
                 selected_videoBitrate = vb2;
                 break;
             case 3:
@@ -263,6 +263,11 @@ public:
                 selected_videoBitrate = vb3;
                 break;
             }
+        }
+        else if (choice==2)
+        {
+            is_vb_selected = false;
+            std::cout << "Going without -vb option";
         }
         else
         {
@@ -299,14 +304,19 @@ public:
     necessary commands for that encode respectively */
     void generateCodes(std::string videoEncoding)
     {
-        if (is_ab_selected = true)
+        if (is_ab_selected == true && is_vb_selected == true)
+        {
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec "<<videoEncoding<<" -acodec aac -vb " << selected_videoBitrate << "M "<< "-ab " << selected_audioBitrate << "k "
+            << "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
+        }
+        else if (is_ab_selected == true)
         {
             std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec "<<videoEncoding<<" -acodec aac -ab " << selected_audioBitrate << "k "
                       << "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
         }
-        else if (is_vb_selected = true)
+        else if (is_vb_selected == true)
         {
-            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec "<<videoEncoding<<" -acodec aac -vb " << selected_videoBitrate << "k "
+            std::cout << "ffmpeg -i " << video_name << ".mp4 -vcodec "<<videoEncoding<<" -acodec aac -vb " << selected_videoBitrate << "M "
                       << "-crf " << selected_crf << " " << video_name << ".encoded.mp4";
         }
         else
@@ -340,7 +350,7 @@ public:
             case 1: //h264
             {
                 select_crf();
-                // select_audioBitrate();
+                select_audioBitrate();
                 select_videoBitrate();
                 do
                 {

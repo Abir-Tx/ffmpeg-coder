@@ -1,6 +1,7 @@
 #if !defined(FRONTEND_FUNC_H)
 #define FRONTEND_FUNC_H
 
+#include "rang.hpp"
 #include <iostream>
 #include <vector>
 #include "utils.hpp"
@@ -86,7 +87,7 @@ void homepage()
         }
 
         //taking choice input
-        cout << "Your choice: ";
+        cout <<rang::bg::green<<rang::fg::black<<"\nYour choice: "<<rang::fg::reset<<rang::bg::reset;
         cin >> choice;
 
         //Entering into selected option funcs
