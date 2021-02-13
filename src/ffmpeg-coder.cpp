@@ -12,12 +12,11 @@ int main()
         if (slock.unlocker() == true)
         {
             clear_screen();
-            title();
             homepage();
         }
         else if (slock.unlocker() == false)
         {
-            std::cout<<"Exit the app";
+            std::cout<<"Exiting the app";
         }
         else
         {
@@ -27,7 +26,6 @@ int main()
     else
     {
         clear_screen();
-        title();
         homepage();
     }
 

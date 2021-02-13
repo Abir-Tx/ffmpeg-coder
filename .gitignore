@@ -36,3 +36,4 @@
 #project extras
 bin/*
 passphrase.bin
+s_lockValue.bin

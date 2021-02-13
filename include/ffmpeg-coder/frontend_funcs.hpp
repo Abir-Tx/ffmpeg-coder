@@ -69,6 +69,7 @@ void homepage()
     do
     {
         clear_screen();
+        title();
         cout << "Choose your option: " << endl;
 
         //Adding the options to the homepage menu (Main menu)
