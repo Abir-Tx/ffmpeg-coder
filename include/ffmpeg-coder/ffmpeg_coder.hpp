@@ -106,6 +106,7 @@ public:
 
     void select_audioBitrate()
     {
+        clear_screen();
         int choice;
         int ab1 = 96;
         int ab2 = 128;
@@ -129,10 +130,12 @@ public:
         std::cout << "Your choice: ";
         std::cin >> choice;
 
+        clear_screen();
         if (choice == 1)
         {
             is_ab_selected = true;
             //showing the audioBitrate
+            std::cout<<"Select Audio Bitrate for your Video: "<<std::endl;
             for (int i = 0; i < audiobitrate.size(); i++)
             {
                 std::cout << (i + 1) << ". " << audiobitrate[i] << std::endl;
@@ -224,6 +227,7 @@ public:
         cout << "Your choice: ";
         cin >> choice;
 
+        clear_screen();
         std::cout << "Select the appropriate video bitrate (default is 8 MBPS): ";
         std::cout << std::endl;
         if (choice == 1)
@@ -287,7 +291,7 @@ public:
         // getline(std::cin, video_name);
         std::cin >> video_name;
         clear_screen();
-        std::cout << "Note: Video file names with space does not work.";
+        std::cout << rang::fg::blue<< "Note: Video file names with space does not work."<<rang::fg::reset;
         std::cout << std::endl;
         std::cout << "NB: Input -1 to Exit the input loop";
         std::cout << std::endl;
@@ -361,6 +365,7 @@ public:
             case 2:
             {
                 select_crf();
+                select_audioBitrate();
                 select_videoBitrate();
                 do
                 {
