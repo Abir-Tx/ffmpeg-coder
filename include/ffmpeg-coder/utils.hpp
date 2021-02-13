@@ -20,6 +20,7 @@ void clear_screen()
 // Function for dynamically decorating a text
 void decorateMe(std::string textToDecor){
     using namespace rang; /* 3rd party library for coloring texts */
+
     int chars = textToDecor.capacity();
     int counter = 0;
     std::cout<<std::endl;
@@ -38,7 +39,6 @@ void decorateMe(std::string textToDecor){
     std::cout<<fg::reset;
     std::cout<<std::endl;
     std::cout<<std::endl;
-    
 }
 
 #endif // UTILS_H

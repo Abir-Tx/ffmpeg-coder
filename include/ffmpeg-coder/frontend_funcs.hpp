@@ -6,6 +6,8 @@
 #include "utils.hpp"
 #include "ffmpeg_coder.hpp"
 #include <fstream>
+#include "s_lock.hpp"
+
 //Functions
 void title()
 {
@@ -24,6 +26,36 @@ void about()
     }
 }
 
+void settings()
+{
+    int choice;
+    clear_screen();
+    std::vector<std::string> available_settings;
+    available_settings.push_back("Startup-Lock");
+
+    for (int i = 0; i < available_settings.size(); i++)
+    {
+        std::cout << (i + 1) << ". " << available_settings[i] << std::endl;
+    }
+
+    std::cout << "\n\nGive your choice: ";
+    std::cin >> choice;
+
+    switch (choice)
+    {
+    case 1:
+    {
+        S_Lock slock;
+        slock.setupLock();
+        break;
+    }
+
+    default:
+        std::cout << "Invalid choice !!";
+        break;
+    }
+}
+
 //Home page of the tool
 void homepage()
 {
@@ -31,7 +63,7 @@ void homepage()
 
     ffmpeg ffmpeg; //Creating ffmpeg object
     int choice;
-    
+
     /* The char goBack variable is used for navigating to the main screen using the while loop */
     char goBack;
     do
@@ -43,6 +75,7 @@ void homepage()
         vector<string> options;
         options.push_back("Make Codes");
         options.push_back("About");
+        options.push_back("Settings");
         options.push_back("Exit");
 
         //showing the options
@@ -69,6 +102,10 @@ void homepage()
             about();
         }
         else if (choice == 3)
+        {
+            settings();
+        }
+        else if (choice == 4)
         {
             clear_screen();
             std::cout << "Exiting the program..............." << std::endl;

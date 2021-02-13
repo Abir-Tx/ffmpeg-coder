@@ -273,9 +273,12 @@ public:
         clear_screen();
     }
 
+    /* take_videoName method takes video names as input and stores the name in the global video_name
+    variable. So it can be easy to use this method on any video encoding format */
     void take_videoName(){
         //Taking the video name input
         std::cout << "Please input the video file name without file extension: ";
+
         // getline(std::cin, video_name);
         std::cin >> video_name;
         clear_screen();
@@ -287,12 +290,13 @@ public:
         std::cout << "Your inputted video file's name is: " << video_name;
         std::cout << std::endl;
 
-        //preparing the prefix and suffix code for ffmpeg convertion
         std::cout << "Generated code to run in your CLI in the specified video file Directory: ";
         std::cout << std::endl;
         std::cout << std::endl;
     }
 
+    /* generateCodes method is for taking a specific video encoding method name and generate all the
+    necessary commands for that encode respectively */
     void generateCodes(std::string videoEncoding)
     {
         if (is_ab_selected = true)
