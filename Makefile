@@ -12,7 +12,7 @@ APPNAME := ffmpeg-coder
 
 .PHONY: all
 
-all: build run
+all: dir build run
 
 .PHONY: build
 build:
@@ -38,3 +38,8 @@ winbuild:
 winrun:
 	echo "Running the built program...."
 	./${BUILDDIR}/${APPNAME}.exe
+
+.PHONY: dir
+dir:
+	echo Creating directories.....
+	mkdir bin usrData appData
