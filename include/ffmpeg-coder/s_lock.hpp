@@ -8,25 +8,46 @@
 class S_Lock
 {
 private:
-    bool isLock;
+    bool isLock = false;
     std::string passphrase;
 
+    std::string getPassphrase()
+    {
+        return passphrase;
+    }
+    void setIsLock(bool value)
+    {
+        isLock = value;
+        std::ofstream writer("appData/s_lockValue.bin");
+        writer << isLock;
+        writer.close();
+    }
+
+public:
     // setter and getter
     void setPassphrase(std::string passphrase)
     {
         this->passphrase = passphrase;
     };
-    std::string getPassphrase()
-    {
-        return passphrase;
-    }
 
     bool getIsLock()
     {
-        return isLock;
+        std::ifstream reader("appData/s_lockValue.bin");
+        int storer;
+        reader >> storer;
+
+        if (storer==0)
+        {
+            return false;
+        }
+        else if ( storer == 1)
+        {
+            return true;
+        }
+        else return false;
     }
 
-public:
+
     //Methods
     int encrypt(std::string text)
     {
@@ -61,6 +82,8 @@ public:
             {
                 passKeeper << encryptedPassphrase;
                 passKeeper.close();
+                // Turn on the flag to let other funcs know that locking is turned on
+                setIsLock(true);
             }
             else
             {
@@ -76,6 +99,7 @@ public:
         int isRemoved = remove("usrData/passphrase.bin");
         if (isRemoved == 0)
         {
+            setIsLock(false);
             std::cout<<"Passphrase removed successfully";
             std::cout<<std::endl;
             
@@ -110,6 +134,32 @@ public:
         {
             std::cout<<"Invalid Option";
             std::cout<<std::endl;
+        }
+    }
+
+    bool unlocker()
+    {
+        std::string givenPassphrase;
+        int storedPassphrase;
+        std::cout<<"Enter your passphrase: ";
+        std::cin>>givenPassphrase;
+
+        std::ifstream passReader ("usrData/passphrase.bin");
+        /* while(getline(passReader, storedPassphrase))
+        {
+            storedPassphrase = storedPassphrase;
+        } */
+
+        passReader >> storedPassphrase;
+
+        if (encrypt(givenPassphrase)==storedPassphrase)
+        {
+             return true;
+        }
+        else
+        {
+            std::cout<<"Wrong passphrase !!";
+            return false;
         }
     }
 };
