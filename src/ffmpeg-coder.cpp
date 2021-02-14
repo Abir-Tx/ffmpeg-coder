@@ -6,6 +6,10 @@
 #include "s_lock.hpp"
 int main()
 {
+#ifdef __unix__
+    clear_screen();
+    homepage();
+#else
     S_Lock slock;
     if (slock.getIsLock() == true)
     {
@@ -16,7 +20,7 @@ int main()
         }
         else if (slock.unlocker() == false)
         {
-            std::cout<<"Exiting the app";
+            std::cout << "Exiting the app";
         }
         else
         {
@@ -28,5 +32,5 @@ int main()
         clear_screen();
         homepage();
     }
-
+#endif
 }
