@@ -34,6 +34,7 @@ void settings()
     std::vector<std::string> available_settings;
     available_settings.push_back("Startup-Lock");
 
+    std::cout<<rang::fg::blue<<rang::style::bold<<"NB: "<<rang::style::reset<<"This feature only works in windows now !"<<rang::fg::reset<<std::endl;
     for (int i = 0; i < available_settings.size(); i++)
     {
         std::cout << (i + 1) << ". " << available_settings[i] << std::endl;
