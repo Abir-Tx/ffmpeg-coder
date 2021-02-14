@@ -20,10 +20,10 @@ build:
 
 .PHONY: clean
 clean:
-	echo "Deleting the binaries...."
-    rm ${BUILDDIR}/*
-    rm usrData/*
-    rm appData/*
+	echo Deleting the binaries....
+	rm ${BUILDDIR}/*
+	rm usrData/*
+	rm appData/*
 
 .PHONY: run
 run:
