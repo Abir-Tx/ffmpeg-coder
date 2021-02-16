@@ -1,9 +1,9 @@
 Package: ffmpeg-coder
 Version: 1.0
-Section: custom
+Section: misc
 Priority: optional
-Architecture: all
+Architecture: any 
 Essential: no
 Installed-Size: 512
-Maintainer: abir-tx
+Maintainer: abir-tx <abirtx@yandex.com>
 Description: A small cross platform CLI tool which will help in producing different types video converting codes quickly for new ffmpeg CLI users

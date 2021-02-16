@@ -12,7 +12,7 @@ APPNAME := ffmpeg-coder
 
 .PHONY: all
 
-all: dir build run
+all: build run
 
 .PHONY: build
 build:
