@@ -5,11 +5,9 @@ Maintainer: abir-tx <abirtx@yandex.com>
 Build-Depends: g++, make
 Standard-Version: 1.0
 Homepage: http://www.github.com/abir-tx/ffmpeg-coder
-
 Package: ffmpeg-coder
 Version: 1.0
 Architecture: all 
 Essential: no
 Installed-Size: 52
-Description: A small cross platform CLI tool which will help in producing different types 
-video converting codes quickly for new ffmpeg CLI users. A very useful tool for new ffmpeg CLI users.
+Description: A small cross platform CLI tool which will help in producing different types video converting codes quickly for new ffmpeg CLI users.
