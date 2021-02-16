@@ -9,5 +9,11 @@ Package: ffmpeg-coder
 Version: 1.0
 Architecture: all 
 Essential: no
-Installed-Size: 52
+Size: 20
+Installed-Size: 80
 Description: A small cross platform CLI tool which will help in producing different types video converting codes quickly for new ffmpeg CLI users.
+ # FFMPEG-Coder
+ A small cross platform CLI tool which will help in producing different types video converting codes quickly for new ffmpeg CLI users. The tool will make it easy to generate ffmpeg commands for them. If you don't use or know about **FFMPEG** then this tool might not be for you.
+ # Who is this tool for ?
+ This tool is created for those who find it difficult to understand or find the appropriate commands for converting a video as they want using the FFMPEG CLI tool.
+ Also those who are new to Command Lines they can also use this tool to generate ffmpeg commands very easily. Many new ffmpeg users find it difficult to find the appropriate ffmpeg commands to convert their videos to with their desired configs. So, as a result they end up googling a lot and wasting their time. So this tool is for them.
