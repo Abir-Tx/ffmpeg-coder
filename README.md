@@ -17,6 +17,4 @@ The user should have really basic knowledge about ffmpeg like how to run ffmpeg 
 - Supports options for **h264** and **libx265**.
 
 # Current Development State
-Currently the tool is under heavy development for it's first major release. You can download the testing binaries from here - 
-> ## Download the testing binaries
-> [Download Now](https://github.com/Abir-Tx/ffmpeg-coder/releases/tag/v0.1-alpha)
+Major version 1.0 has been released
