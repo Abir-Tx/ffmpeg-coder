@@ -27,6 +27,13 @@ The user should have really basic knowledge about ffmpeg like how to run ffmpeg 
 ## Linux (Debian based distros)
 This installation process works on ubuntu, kali linux, linux mint, debian and other debian based distros.
 
+### Automatic One Click Process
+
+- Just copy and paste this script below and ***voila***
+```bash
+wget https://raw.githubusercontent.com/Abir-Tx/ffmpeg-coder/main/scripts/debian_install.sh && chmod +x debian_install.sh &&./debian_install.sh
+```
+### Manual Download Process
 - First download the **ffmpeg-coder_1.0_all.deb** from the release or from here.
 - Then open terminal to the folder where the .deb file is downloaded.
 - Now from the terminal run - 
@@ -34,7 +41,7 @@ This installation process works on ubuntu, kali linux, linux mint, debian and ot
 chmod +x ffmpeg-coder_1.0_all.deb
 sudo apt install ./ffmpeg-coder_1.0_all.deb
 ```
-- ***ffmpeg-coder*** should be installed now. Now run ```ffmpeg-coder``` in your terminal. Sometime if running just after installation the tool might not start. In that case run ```ffmpeg-coder``` in terminal twice. 
+- ***ffmpeg-coder*** should be installed now. Now run ```ffmpeg-coder``` in your terminal. Sometime if running just after installation the tool might not start. In that case run ```ffmpeg-coder``` in terminal twice.
 
 ## Install from source
 Users other than Debian based distro can use the tool by compiling the tool from the source code easily. Also any distro or windows users can compile and use the tool if they are having problems using the binary packages provided in the release.
@@ -51,7 +58,9 @@ git clone https://github.com/Abir-Tx/ffmpeg-coder.git
 cd ffmpeg-coder
 ```
 ## Using Make
-- Now if you are in linux & have build-essentian installed then just run - 
+- **Linux**
+
+Now if you are in linux & have build-essentian installed then just run - 
 ```bash
 make dir
 make build
@@ -60,6 +69,9 @@ The tool will be compiled to the ```bin``` folder inside ffmpeg-coder folder. Yo
 ```bash
 make run
 ```
+
+
+- **Windows**
 
 If you are windows user and have ***GNU Make** installed or configured in your system then run -
 ```batch
@@ -71,12 +83,12 @@ The tool will be compiled to the ```bin``` folder inside ffmpeg-coder folder. Yo
 make winrun
 ```
 ## Using G++
-- In Linux run - 
+- **In Linux run -**
 ```bash
 g++ src/ffmpeg-coder.cpp -I include/ffmpeg-coder -I lib/ -o bin/ffmpeg-coder
 ./bin/ffmpeg-coder
 ```
-- In Windows run - 
+- **In Windows run -**
 ```batch
 g++ src/ffmpeg-coder.cpp -I include/ffmpeg-coder -I lib/ -o bin/ffmpeg-coder.exe
 ./bin/ffmpeg-coder
