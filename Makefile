@@ -39,7 +39,7 @@ debpackage: build
 	echo Creating the debian package of ffmpeg-coder
 	mv bin/ffmpeg-coder.o bin/ffmpeg-coder
 	cp bin/ffmpeg-coder ffmpeg-coder/usr/bin/
-	dpkg-deb -v --build ffmpeg-coder bin
+	fakeroot dpkg-deb -v --build ffmpeg-coder bin
 	echo The deb package has been created in the bin folder
 	
 
