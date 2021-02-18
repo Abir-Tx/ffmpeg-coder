@@ -16,5 +16,76 @@ The user should have really basic knowledge about ffmpeg like how to run ffmpeg 
 - Very small, fast and lightweight.
 - Supports options for **h264** and **libx265**.
 
-# Current Development State
-Major version 1.0 has been released
+# Installation
+## Windows
+- First download the windows installer file from the release or from here.
+- Extract or Unzip the **ffmpeg-coder_1.0_win.zip**
+- Go into the unzipped folder and double click on **ffmpeg-coder_1.0_win.exe** file.
+- The installer will start & then just follow the onscreen instructions and ffmpeg-coder will be installed on your machine
+- After installation, from the start menu search for ***ffmpeg-coder*** and open the tool.
+
+## Linux (Debian based distros)
+This installation process works on ubuntu, kali linux, linux mint, debian and other debian based distros.
+
+- First download the **ffmpeg-coder_1.0_all.deb** from the release or from here.
+- Then open terminal to the folder where the .deb file is downloaded.
+- Now from the terminal run - 
+```bash
+chmod +x ffmpeg-coder_1.0_all.deb
+sudo apt install ./ffmpeg-coder_1.0_all.deb
+```
+- ***ffmpeg-coder*** should be installed now. Now run ```ffmpeg-coder``` in your terminal. Sometime if running just after installation the tool might not start. In that case run ```ffmpeg-coder``` in terminal twice. 
+
+## Install from source
+Users other than Debian based distro can use the tool by compiling the tool from the source code easily. Also any distro or windows users can compile and use the tool if they are having problems using the binary packages provided in the release.
+
+
+**Steps for compiling from the source -**
+
+- Download the [**Source Code.zip**](https://github.com/Abir-Tx/ffmpeg-coder/archive/v1.0.zip) from the release section for the stable version or using git for the latest devlopement version. In Terminal for Linux or CMD for Windows run - 
+```bash
+git clone https://github.com/Abir-Tx/ffmpeg-coder.git
+```
+- Then ```cd``` into the ```ffmpeg-coder``` directory. 
+```bahs
+cd ffmpeg-coder
+```
+## Using Make
+- Now if you are in linux & have build-essentian installed then just run - 
+```bash
+make dir
+make build
+```
+The tool will be compiled to the ```bin``` folder inside ffmpeg-coder folder. You can also run ```make run``` to run the tool from there - 
+```bash
+make run
+```
+
+If you are windows user and have ***GNU Make** installed or configured in your system then run -
+```batch
+make dir
+make winbuild
+```
+The tool will be compiled to the ```bin``` folder inside ffmpeg-coder folder. You can also run ```make winrun``` to run the tool from there - 
+```batch
+make winrun
+```
+## Using G++
+- In Linux run - 
+```bash
+g++ src/ffmpeg-coder.cpp -I include/ffmpeg-coder -I lib/ -o bin/ffmpeg-coder
+./bin/ffmpeg-coder
+```
+- In Windows run - 
+```batch
+g++ src/ffmpeg-coder.cpp -I include/ffmpeg-coder -I lib/ -o bin/ffmpeg-coder.exe
+./bin/ffmpeg-coder
+```
+
+By following the above steps you will have a compiled version of ***ffmpeg-coder*** for your device.
+
+# Troubleshooting
+
+
+
+
