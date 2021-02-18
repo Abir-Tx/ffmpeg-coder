@@ -18,7 +18,7 @@ The user should have really basic knowledge about ffmpeg like how to run ffmpeg 
 
 # Installation
 ## Windows
-- First download the windows installer file from the release or from here.
+- First download the windows installer file from the release or from [here](https://github.com/Abir-Tx/ffmpeg-coder/releases/download/v1.0/ffmpeg-coder_1.0_win.zip).
 - Extract or Unzip the **ffmpeg-coder_1.0_win.zip**
 - Go into the unzipped folder and double click on **ffmpeg-coder_1.0_win.exe** file.
 - The installer will start & then just follow the onscreen instructions and ffmpeg-coder will be installed on your machine
@@ -34,7 +34,7 @@ This installation process works on ubuntu, kali linux, linux mint, debian and ot
 wget https://raw.githubusercontent.com/Abir-Tx/ffmpeg-coder/main/scripts/debian_install.sh && chmod +x debian_install.sh &&./debian_install.sh
 ```
 ### Manual Download Process
-- First download the **ffmpeg-coder_1.0_all.deb** from the release or from here.
+- First download the **ffmpeg-coder_1.0_all.deb** from the release or from [here](https://github.com/Abir-Tx/ffmpeg-coder/releases/download/v1.0/ffmpeg-coder_1.0_all.deb).
 - Then open terminal to the folder where the .deb file is downloaded.
 - Now from the terminal run - 
 ```bash
@@ -83,6 +83,7 @@ The tool will be compiled to the ```bin``` folder inside ffmpeg-coder folder. Yo
 make winrun
 ```
 ## Using G++
+
 - **In Linux run -**
 ```bash
 g++ src/ffmpeg-coder.cpp -I include/ffmpeg-coder -I lib/ -o bin/ffmpeg-coder
