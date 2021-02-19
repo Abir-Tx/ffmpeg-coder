@@ -127,3 +127,6 @@ If you are having any issue related to this tool or if you face any bug/problem 
 
 I will try to fix and add features as much as I can.
 
+
+# Contribute
+Pull requests are always welcomed !! :-) 
