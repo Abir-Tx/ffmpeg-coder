@@ -1,3 +1,6 @@
+[![Download ffmpeg-coder](https://sourceforge.net/sflogo.php?type=11&group_id=3333544)](https://sourceforge.net/p/ffmpeg-coder/) 
+
+[![Download ffmpeg-coder](https://img.shields.io/sourceforge/dt/ffmpeg-coder.svg)](https://sourceforge.net/projects/ffmpeg-coder/files/latest/download)
 # FFMPEG-Coder
 A small ***cross platform*** CLI tool which will help in producing different types video converting codes quickly for new ffmpeg CLI users. The tool will make it easy to generate ffmpeg commands for them. If you don't use or know about **FFMPEG** then this tool might not be for you.
 
@@ -15,6 +18,15 @@ The user should have really basic knowledge about ffmpeg like how to run ffmpeg 
 - Does not dpeend on any other dependencies.
 - Very small, fast and lightweight.
 - Supports options for **h264** and **libx265**.
+
+# Downloads
+- Downloads are available in **sourceforge** - 
+
+[![Download ffmpeg-coder](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/ffmpeg-coder/files/latest/download)
+
+
+- You can download the latest version from the [release](https://github.com/Abir-Tx/ffmpeg-coder/releases/latest) section.
+
 
 # Installation
 ## Windows
