@@ -133,7 +133,7 @@ I will try to fix and add features as much as I can.
 - [Abir-Tx](https://www.github.com/abir-tx)
 
 # Contribute
-See [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+See [Contribution guidelines for this project](/docs/CONTRIBUTING.md)
 
 > Pull requests are always welcomed !! :-)
 
