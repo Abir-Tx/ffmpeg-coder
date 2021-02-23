@@ -38,7 +38,7 @@ If you really want to contribute to this project, the best way is to get familia
 
 - First you need to know some basics of ffmpeg CLI commands so that you can use those commands in this project to add features
 
-- Get familiar with the source code and project structure so that is becomes easier for you to implement the features. The project structure & source code is described [here](/doc/source-code.md)
+- Get familiar with the source code and project structure so that is becomes easier for you to implement the features. The project structure & source code is described [here](https://github.com/Abir-Tx/ffmpeg-coder/blob/main/docs/source-code.md)
 
 - Add your code/feature by forking this project first & then write your codes & then submit the changes by creating a pull request
 
