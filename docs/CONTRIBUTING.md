@@ -77,6 +77,7 @@ To do so -
 clang-format -style=file -i your-changed-file.cpp
 ```
 
+----
 
 ***Thanks for your contibution***
 

@@ -127,7 +127,7 @@ If you are having any issue related to this tool or if you face any bug/problem 
 
 I will try to fix and add features as much as I can.
 
-# Maintainers & Cntributors
+# Maintainers & Contributors
 
 **Maintainers**
 - [Abir-Tx](https://www.github.com/abir-tx)
