@@ -2,29 +2,29 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-linux:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: make-dir
-      run: make dir
-    - name: linux-build
-      run: make build
-    - name: make run
-      run: make run
-  
+      - uses: actions/checkout@v2
+      - name: make-dir
+        run: make dir
+      - name: linux-build
+        run: make build
+      - name: make run
+        run: make run
+
   build-windows:
-    
     runs-on: windows-2019
-    
+
     steps:
-    - uses: actions/checkout@v2
-    - name: windows-build
-      run: make winbuild
+      - uses: actions/checkout@v2
+      - name: install-make
+        run: choco install make
+      - name: windows-build
+        run: make winbuild
