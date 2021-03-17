@@ -26,5 +26,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: install-make
         run: choco install make
+      - name: make-directory
+        run: make dir
       - name: windows-build
         run: make winbuild
