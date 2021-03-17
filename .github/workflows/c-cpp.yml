@@ -19,4 +19,12 @@ jobs:
       run: make build
     - name: make run
       run: make run
-
+  
+  build-windows:
+    
+    runs-on: windows-2019
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: windows-build
+      run: make winbuild
