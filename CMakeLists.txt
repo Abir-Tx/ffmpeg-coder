@@ -12,6 +12,8 @@ include_directories(include/ffmpeg-coder lib)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 
+file(GLOB SOURCES "src/*.cpp")
+add_executable(ffmpeg-coder ${SOURCES})
 
-add_executable(ffmpeg-coder src/ffmpeg-coder.cpp)
+# add_executable(ffmpeg-coder src/ffmpeg-coder.cpp src/test.cpp)
 
