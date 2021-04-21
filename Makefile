@@ -12,7 +12,7 @@ APPNAME := ffmpeg-coder
 
 .PHONY: all
 
-all: dir build run
+all: build run
 
 .PHONY: build
 build:
@@ -22,14 +22,26 @@ build:
 clean:
 	echo Deleting the binaries....
 	rm ${BUILDDIR}/*
-	rm usrData/*
-	rm appData/*
-
+	rm ffmpeg-coder/usr/bin/ffmpeg-coder
+	
 .PHONY: run
 run:
-	echo "Running the built program...."
+	echo Running the built program....
 	./${BUILDDIR}/${APPNAME}.o
 
+.PHONY: dir
+dir:
+	echo Creating directories.....
+	mkdir bin
+
+.PHONY: debpackage
+debpackage: build
+	echo Creating the debian package of ffmpeg-coder
+	mv bin/ffmpeg-coder.o bin/ffmpeg-coder
+	cp bin/ffmpeg-coder ffmpeg-coder/usr/bin/
+	fakeroot dpkg-deb -v --build ffmpeg-coder bin
+	echo The deb package has been created in the bin folder
+	
 
 # Windows Configs for make
 .PHONY: winbuild
@@ -38,10 +50,5 @@ winbuild:
 
 .PHONY: winrun
 winrun:
-	echo "Running the built program...."
+	echo Running the built program....
 	./${BUILDDIR}/${APPNAME}.exe
-
-.PHONY: dir
-dir:
-	echo Creating directories.....
-	mkdir bin usrData appData
