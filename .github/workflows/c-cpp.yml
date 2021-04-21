@@ -2,7 +2,9 @@ name: Project Build CI
 
 on:
   push:
-    branches: [main]
+    branches: 
+    - main
+    - qucik-convert-dev
   pull_request:
     branches: [main]
 
