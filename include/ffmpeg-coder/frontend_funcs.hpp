@@ -78,7 +78,7 @@ void homepage()
     {
         clear_screen();
         title();
-        cout << "Choose your option: " << endl;
+        cout <<rang::style::dim <<  "Choose your option: "<< rang::style::reset << endl;
 
         //Adding the options to the homepage menu (Main menu)
         vector<string> options;
