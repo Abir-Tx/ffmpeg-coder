@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - qucik-convert-dev
+      - quick-convert-dev
   pull_request:
     branches: [main]
 
