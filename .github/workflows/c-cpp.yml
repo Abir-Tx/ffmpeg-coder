@@ -33,4 +33,4 @@ jobs:
       - name: windows-build
         run: make -f Makefile.own winbuild
       - name: Windows CMake Build
-        run: cmake . && make
+        run: cmake -G "MinGW Makefiles" && cmake . && make
