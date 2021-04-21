@@ -1,5 +1,5 @@
-#if !defined(FFMPEG_CODER_H)
-#define FFMPEG_CODER_H
+#if !defined(FFMPEG_CODER_HPP)
+#define FFMPEG_CODER_HPP
 
 #include "utils.hpp"
 #include <iostream>
@@ -330,6 +330,9 @@ class ffmpeg {
         }
         }
     }
+
+//  Quick convert function
+    void quickConvert(){};
 };
 
 ffmpeg::ffmpeg() {}

@@ -1,5 +1,6 @@
 # make script for the ffmpeg-coder project to build the project from source code 
 # By Abir-Tx
+# Use make -f Makefile.own winbuild to use this file
 
 
 # variables
@@ -33,6 +34,7 @@ run:
 dir:
 	echo Creating directories.....
 	mkdir bin
+	mkdir build
 
 .PHONY: debpackage
 debpackage: build

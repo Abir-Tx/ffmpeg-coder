@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C/C++ Build CI
 
 on:
   push:
@@ -13,20 +13,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: make-dir
-        run: make dir
+        run: make -f Makefile.own dir
       - name: linux-build
-        run: make build
+        run: make -f Makefile.own build
       - name: make run
-        run: make run
+        run: make -f Makefile.own run
+      - name: Linux CMake Build
+        run: cmake . && make
 
   build-windows:
     runs-on: windows-2019
 
     steps:
       - uses: actions/checkout@v2
-      - name: install-make
-        run: choco install make
+      # - name: install-make
+      #   run: choco install make cmake
       - name: make-directory
-        run: make dir
+        run: make -f Makefile.own dir
       - name: windows-build
-        run: make winbuild
+        run: make -f Makefile.own winbuild
+      - name: Windows CMake Build
+        run: cmake -G "MinGW Makefiles" && cmake . && make
