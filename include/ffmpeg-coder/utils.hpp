@@ -1,5 +1,5 @@
-#if !defined(UTILS_H)
-#define UTILS_H
+#if !defined(UTILS_HPP)
+#define UTILS_HPP
 
 #include "rang.hpp"
 #include <iostream>

@@ -1,5 +1,5 @@
-#if !defined(S_LOCK_H)
-#define S_LOCK_H
+#if !defined(S_LOCK_HPP)
+#define S_LOCK_HPP
 
 #include "rang.hpp"
 #include <iostream>

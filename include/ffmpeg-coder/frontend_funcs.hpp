@@ -1,5 +1,5 @@
-#if !defined(FRONTEND_FUNC_H)
-#define FRONTEND_FUNC_H
+#if !defined(FRONTEND_FUNC_HPP)
+#define FRONTEND_FUNC_HPP
 
 #include "rang.hpp"
 #include <iostream>
@@ -108,7 +108,7 @@ void homepage()
             ffmpeg.selected_action();
         }
         else if (choice == 2){
-            cout << "Work in progress !!" << endl;
+            ffmpeg.quickConvert();
         }
         else if (choice == 3)
         {
