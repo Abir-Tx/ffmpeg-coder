@@ -1,3 +1,5 @@
+# Use cmake -G "Mingw Makefiles" before using Cmake on windows with g++ (mingw) compiler
+
 cmake_minimum_required(VERSION 3.12)
 project(ffmpeg-coder VERSION 1.0.0)
 message("FFMPEG CODER BUILD PROCESS")
