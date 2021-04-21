@@ -33,6 +33,7 @@ void settings()
     clear_screen();
     std::vector<std::string> available_settings;
     available_settings.push_back("Startup-Lock");
+    available_settings.push_back("Go Back");
 
     std::cout<<rang::fg::blue<<rang::style::bold<<"NB: "<<rang::style::reset<<"This feature only works in windows now !\n\n"<<rang::fg::reset<<std::endl;
     for (int i = 0; i < available_settings.size(); i++)
@@ -49,6 +50,11 @@ void settings()
     {
         S_Lock slock;
         slock.showOptions();
+        break;
+    }
+
+    case 2:
+    {
         break;
     }
 
