@@ -26,8 +26,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: install-make
-        run: choco install make cmake
+      # - name: install-make
+      #   run: choco install make cmake
       - name: make-directory
         run: make -f Makefile.own dir
       - name: windows-build
