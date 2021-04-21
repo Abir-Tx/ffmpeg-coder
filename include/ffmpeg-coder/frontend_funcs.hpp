@@ -83,6 +83,7 @@ void homepage()
         //Adding the options to the homepage menu (Main menu)
         vector<string> options;
         options.push_back("Make Codes");
+        options.push_back("Quick Convert");
         options.push_back("About");
         options.push_back("Settings");
         options.push_back("Exit");
@@ -106,15 +107,18 @@ void homepage()
             ffmpeg.select_encodes();
             ffmpeg.selected_action();
         }
-        else if (choice == 2)
-        {
-            about();
+        else if (choice == 2){
+            cout << "Work in progress !!" << endl;
         }
         else if (choice == 3)
         {
-            settings();
+            about();
         }
         else if (choice == 4)
+        {
+            settings();
+        }
+        else if (choice == 5)
         {
             clear_screen();
             std::cout << "Exiting the program..............." << std::endl;
@@ -122,6 +126,7 @@ void homepage()
         }
         else
         {
+            cout << "Invalid choice | Exiting...........";
             exit(0);
         }
 
