@@ -332,7 +332,15 @@ class ffmpeg {
     }
 
 //  Quick convert function
-    void quickConvert(){};
+    void quickConvert(){
+        clear_screen();
+        selected_crf = 26;
+        do{
+        take_videoName();
+        generateCodes("h264");
+        }
+        while (video_name != "-1");
+    };
 };
 
 ffmpeg::ffmpeg() {}
