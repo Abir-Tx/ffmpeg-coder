@@ -83,7 +83,7 @@ void homepage()
         //Adding the options to the homepage menu (Main menu)
         vector<string> options;
         options.push_back("Make Codes");
-        options.push_back("Quick Convert");
+        options.push_back("Quick Convert (mp4)");
         options.push_back("About");
         options.push_back("Settings");
         options.push_back("Exit");
