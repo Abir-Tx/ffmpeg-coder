@@ -1,6 +1,7 @@
 #if !defined(FFMPEG_CODER_HPP)
 #define FFMPEG_CODER_HPP
 
+#include "quickConvertSettings.hpp"
 #include "utils.hpp"
 #include <iostream>
 #include <vector>
@@ -331,15 +332,15 @@ class ffmpeg {
         }
     }
 
-//  Quick convert function
-    void quickConvert(){
+    //  Quick convert function
+    void quickConvert() {
+        QC_Settings qc;
         clear_screen();
-        selected_crf = 26;
-        do{
-        take_videoName();
-        generateCodes("h264");
-        }
-        while (video_name != "-1");
+        selected_crf = qc.getCrf();
+        do {
+            take_videoName();
+            generateCodes("h264");
+        } while (video_name != "-1");
     };
 };
 
