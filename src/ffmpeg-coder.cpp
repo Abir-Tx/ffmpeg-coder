@@ -9,19 +9,23 @@ int main() {
     clear_screen();
     homepage();
 #else
-    S_Lock slock;
-    if (slock.getIsLock() == true) {
-        if (slock.unlocker() == true) {
+    S_Lock *slock = new S_Lock();
+    if (slock->getIsLock() == true) {
+        if (slock->unlocker() == true) {
             clear_screen();
             homepage();
-        } else if (slock.unlocker() == false) {
+            delete slock;
+        } else if (slock->unlocker() == false) {
             std::cout << "Exiting the app";
+            delete slock;
         } else {
+            delete slock;
             exit(0);
         }
     } else {
         clear_screen();
         homepage();
     }
+    delete slock;
 #endif
 }
