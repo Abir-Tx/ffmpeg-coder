@@ -1,10 +1,11 @@
 #if !defined(FRONTEND_FUNC_HPP)
 #define FRONTEND_FUNC_HPP
 
-#include "ffmpeg_coder.hpp"
 #include "rang.hpp"
+#include "ffmpeg_coder.hpp"
 #include "s_lock.hpp"
 #include "utils.hpp"
+#include "quickConvertSettings.hpp"
 #include <fstream>
 #include <iostream>
 #include <vector>
@@ -51,6 +52,10 @@ void settings() {
     }
 
     case 2: {
+        QC_Settings *qc = new QC_Settings();
+        qc->set_setted_crf();
+
+        delete qc;
     }
 
     case 3: {
