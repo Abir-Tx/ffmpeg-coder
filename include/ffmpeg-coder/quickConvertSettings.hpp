@@ -18,7 +18,8 @@ class QC_Settings{
   std::string getDefault_encoding();
   // Methods
   void showOptions();
-  
+  void default_encoding_configurer();
+  void default_crf_configurer();
 };
 
 #endif

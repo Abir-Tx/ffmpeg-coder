@@ -55,7 +55,7 @@ void settings() {
         QC_Settings *qc = new QC_Settings();
         
         qc->showOptions();
-
+        qc->default_encoding_configurer();
         delete qc;
     }
 

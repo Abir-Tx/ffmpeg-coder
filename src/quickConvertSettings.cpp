@@ -1,8 +1,9 @@
 
+#include "ffmpeg_coder.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "quickConvertSettings.hpp"
+// #include "quickConvertSettings.hpp"
 
 
 void QC_Settings::set_setted_crf(){
@@ -51,5 +52,22 @@ void QC_Settings::showOptions(){
 }
 
 void QC_Settings::default_encoding_configurer(){
+  std::string givenEncoding;
+  int selectedOption;
 
+  // Showing the current default encoding
+  std::cout<< "The current default is: "<< default_encoding;
+  std::cout<<std::endl;
+  std::cout<<std::endl;
+  
+  // Taking new encoding from user
+  ffmpeg *fmpg = new ffmpeg();
+  fmpg->load_encodes();
+  fmpg->show_encodes();
+  selectedOption = fmpg->select_encodes();
+
+  if (selectedOption == 1)
+  std::cout<<"hey";
+  else
+  std::cout<<"HOO";
 }
