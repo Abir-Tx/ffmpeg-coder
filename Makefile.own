@@ -17,7 +17,7 @@ all: build run
 
 .PHONY: build
 build:
-	${CC} ${CFLAG} ${SRCDIR}/${APPNAME}.cpp ${SRCDIR}/quickConvertSettings.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.o
+	${CC} ${CFLAG} src\ffmpeg-coder.cpp src\frontend_funcs.cpp src\main.cpp src\quickConvertSettings.cpp src\utils.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.o
 
 .PHONY: clean
 clean:
@@ -48,7 +48,7 @@ debpackage: build
 # Windows Configs for make
 .PHONY: winbuild
 winbuild:
-	${CC} ${CFLAG} ${SRCDIR}/${APPNAME}.cpp ${SRCDIR}/quickConvertSettings.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.exe
+	${CC} ${CFLAG} src\ffmpeg-coder.cpp src\frontend_funcs.cpp src\main.cpp src\quickConvertSettings.cpp src\utils.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.exe
 
 .PHONY: winrun
 winrun:
