@@ -17,7 +17,7 @@ all: build run
 
 .PHONY: build
 build:
-	${CC} ${CFLAG} src\ffmpeg-coder.cpp src\frontend_funcs.cpp src\main.cpp src\quickConvertSettings.cpp src\utils.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.o
+	${CC} ${CFLAG} src/ffmpeg-coder.cpp src/frontend_funcs.cpp src/main.cpp src/quickConvertSettings.cpp src/utils.cpp ${INC} -o ${BUILDDIR}/${APPNAME}.o
 
 .PHONY: clean
 clean:
