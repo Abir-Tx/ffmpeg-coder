@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include "quickConvertSettings.hpp"
 
@@ -13,8 +14,21 @@ int QC_Settings::get_setted_crf(){
 }
 
 void QC_Settings:: setDefault_encoding(){
-
+  std::fstream qcsData;
+  qcsData.open("appData/qc_settingsData.bin", std::ios::in);
+  
+  if (qcsData.is_open()){
+  std::string def_encoding;
+  while (getline(qcsData, def_encoding))
+  {
+    default_encoding = def_encoding;
+  }
+  }else{
+    default_encoding = "h264";
+  }
+  std::cout<<default_encoding;
 }
+
 std::string QC_Settings:: getDefault_encoding(){
     return default_encoding;
 }
@@ -36,3 +50,6 @@ void QC_Settings::showOptions(){
   std::cin >> userChoice;
 }
 
+void QC_Settings::default_encoding_configurer(){
+
+}
