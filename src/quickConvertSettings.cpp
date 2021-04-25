@@ -100,3 +100,16 @@ void QC_Settings::default_encoding_configurer(){
   else
   std::cerr << "\nInvalid Option Selected ! Try again";
 }
+
+void QC_Settings::default_crf_configurer(){
+
+}
+
+void QC_Settings::optionsRouter(){
+  if (userChoice == 1)
+    default_encoding_configurer();
+  else if (userChoice == 2)
+    default_crf_configurer();
+  else
+    std::cout<<"Invalid choice. Try again"
+}

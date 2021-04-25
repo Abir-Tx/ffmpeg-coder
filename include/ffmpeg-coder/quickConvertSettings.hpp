@@ -23,6 +23,7 @@ class QC_Settings{
   void showOptions();
   void default_encoding_configurer();
   void default_crf_configurer();
+  void optionsRouter();
 };
 
 #endif
