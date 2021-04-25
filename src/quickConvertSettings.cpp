@@ -120,8 +120,8 @@ void QC_Settings::default_crf_configurer() {
     int selectedOption;
 
     // Showing the current default encoding
-    std::string currentDef = "The current default is: 26";
-    alib::decorateMe(currentDef, 1, " ", true);
+    // std::string currentDef = "The default is: 26";
+    // alib::decorateMe(currentDef, 1, " ", true);
 
     // Taking new encoding from user
     ffmpeg *fmpg = new ffmpeg();
