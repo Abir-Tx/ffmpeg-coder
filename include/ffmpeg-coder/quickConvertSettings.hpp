@@ -8,6 +8,9 @@ class QC_Settings{
   int setted_crf = 26;
   int userChoice;
   std::string default_encoding = "h264";
+
+  // Private methods
+  void settingsDataWriter(std::string filePath, std::string settings);
   public:
 
 

@@ -34,6 +34,7 @@ std::string QC_Settings:: getDefault_encoding(){
     return default_encoding;
 }
 
+
 void QC_Settings::showOptions(){
 
   std::vector<std::string> options;
@@ -49,6 +50,25 @@ void QC_Settings::showOptions(){
   // Taking user input
   std::cout<< "Choose your option:";
   std::cin >> userChoice;
+}
+
+
+void QC_Settings:: settingsDataWriter(std::string filePath, std::string settings){
+try
+    {
+      std::fstream qcsData;
+      qcsData.open(filePath, std::ios::out);
+
+      if (qcsData.is_open()){
+        qcsData << settings;
+      }
+      else
+        throw 501;
+    }
+    catch(...)
+    {
+      std::cerr << "Error occured while openning data file!";
+    }
 }
 
 void QC_Settings::default_encoding_configurer(){
@@ -67,39 +87,10 @@ void QC_Settings::default_encoding_configurer(){
   selectedOption = fmpg->select_encodes();
 
   if (selectedOption == 1){
-    try
-    {
-      std::fstream qcsData;
-      qcsData.open("appData/qcs_encoding.bin", std::ios::out);
-
-      if (qcsData.is_open()){
-        qcsData << fmpg->encodes[0];
-      }
-      else
-        throw 501;
-    }
-    catch(...)
-    {
-      std::cerr << "Error occured while openning data file!";
-    }
-    
+    settingsDataWriter("appData/qcs_encoding.bin", fmpg->encodes[0]);
   }
   else if(selectedOption == 2){
-    try
-    {
-      std::fstream qcsData;
-      qcsData.open("appData/qcs_encoding.bin", std::ios::out);
-
-      if (qcsData.is_open()){
-        qcsData << fmpg->encodes[1];
-      }
-      else
-        throw 501;
-    }
-    catch(...)
-    {
-      std::cerr << "Error occured while openning data file!";
-    }
+    settingsDataWriter("appData/qcs_encoding.bin", fmpg->encodes[1]);
   }
   else
   std::cerr << "\nInvalid Option Selected ! Try again";
