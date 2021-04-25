@@ -41,5 +41,7 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    // clang-format extension settings
+    "editor.formatOnSave": false,
 }
