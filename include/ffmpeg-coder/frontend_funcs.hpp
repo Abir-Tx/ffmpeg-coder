@@ -53,7 +53,8 @@ void settings() {
 
     case 2: {
         QC_Settings *qc = new QC_Settings();
-        qc->set_setted_crf();
+        
+        qc->showOptions();
 
         delete qc;
     }

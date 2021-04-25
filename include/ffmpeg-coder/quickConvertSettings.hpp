@@ -2,9 +2,11 @@
 #define QUICKCONVERTSETTINGS_HPP
 
 #include <iostream>
+
 class QC_Settings{
   private:
   int setted_crf = 26;
+  int userChoice;
   std::string default_encoding = "h264";
   public:
 
@@ -15,7 +17,7 @@ class QC_Settings{
   void setDefault_encoding();
   std::string getDefault_encoding();
   // Methods
-  int showOptions();
+  void showOptions();
   
 };
 
