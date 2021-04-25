@@ -38,6 +38,7 @@ bin/*
 passphrase.bin
 s_lockValue.bin
 release-configs/*
+appData/*
 
 ### CMake ###
 CMakeLists.txt.user

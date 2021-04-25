@@ -1,5 +1,5 @@
 
-// #include "ffmpeg_coder.hpp"
+#include "ffmpeg_coder.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -16,7 +16,7 @@ int QC_Settings::get_setted_crf(){
 
 void QC_Settings:: setDefault_encoding(){
   std::fstream qcsData;
-  qcsData.open("appData/qc_settingsData.bin", std::ios::in);
+  qcsData.open("appData/qcs_encoding.bin", std::ios::in);
   
   if (qcsData.is_open()){
   std::string def_encoding;
@@ -52,22 +52,55 @@ void QC_Settings::showOptions(){
 }
 
 void QC_Settings::default_encoding_configurer(){
-  // std::string givenEncoding;
-  // int selectedOption;
+  std::string givenEncoding;
+  int selectedOption;
 
-  // // Showing the current default encoding
-  // std::cout<< "The current default is: "<< default_encoding;
-  // std::cout<<std::endl;
-  // std::cout<<std::endl;
+  // Showing the current default encoding
+  std::cout<< "The current default is: "<< default_encoding;
+  std::cout<<std::endl;
+  std::cout<<std::endl;
   
-  // // Taking new encoding from user
-  // ffmpeg *fmpg = new ffmpeg();
-  // fmpg->load_encodes();
-  // fmpg->show_encodes();
-  // selectedOption = fmpg->select_encodes();
+  // Taking new encoding from user
+  ffmpeg *fmpg = new ffmpeg();
+  fmpg->load_encodes();
+  fmpg->show_encodes();
+  selectedOption = fmpg->select_encodes();
 
-  // if (selectedOption == 1)
-  // std::cout<<"hey";
-  // else
-  // std::cout<<"HOO";
+  if (selectedOption == 1){
+    try
+    {
+      std::fstream qcsData;
+      qcsData.open("appData/qcs_encoding.bin", std::ios::out);
+
+      if (qcsData.is_open()){
+        qcsData << fmpg->encodes[0];
+      }
+      else
+        throw 501;
+    }
+    catch(...)
+    {
+      std::cerr << "Error occured while openning data file!";
+    }
+    
+  }
+  else if(selectedOption == 2){
+    try
+    {
+      std::fstream qcsData;
+      qcsData.open("appData/qcs_encoding.bin", std::ios::out);
+
+      if (qcsData.is_open()){
+        qcsData << fmpg->encodes[1];
+      }
+      else
+        throw 501;
+    }
+    catch(...)
+    {
+      std::cerr << "Error occured while openning data file!";
+    }
+  }
+  else
+  std::cerr << "\nInvalid Option Selected ! Try again";
 }

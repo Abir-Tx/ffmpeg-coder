@@ -9,7 +9,6 @@
 // The FFMPEG class which will hold all kinds of encode options as methods
 class ffmpeg {
   private:
-    std::vector<std::string> encodes;
     std::vector<int> crf;
     std::vector<int> audiobitrate;
     std::vector<int> videobitrate;
@@ -23,6 +22,7 @@ class ffmpeg {
     bool is_ab_selected = false;
     int selected_videoBitrate;
     bool is_vb_selected = false;
+    std::vector<std::string> encodes;
 
     // Methods
     ffmpeg();
