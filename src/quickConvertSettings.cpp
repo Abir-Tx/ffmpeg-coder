@@ -1,9 +1,11 @@
-
+#include "rang.hpp"
 #include "ffmpeg_coder.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include "quickConvertSettings.hpp"
+#include "alib.hpp"
+#include <iomanip>
 
 
 void QC_Settings::set_setted_crf(){
@@ -27,16 +29,16 @@ void QC_Settings:: setDefault_encoding(){
   }else{
     default_encoding = "h264";
   }
-  std::cout<<default_encoding;
 }
 
 std::string QC_Settings:: getDefault_encoding(){
+    setDefault_encoding();
     return default_encoding;
 }
 
 
 void QC_Settings::showOptions(){
-
+  clear_screen();
   std::vector<std::string> options;
   options.push_back("Set Default Encoding");
   options.push_back("Set default CRF");
@@ -48,7 +50,8 @@ void QC_Settings::showOptions(){
   }
 
   // Taking user input
-  std::cout<< "Choose your option:";
+  std::cout<< rang::style::bold << rang::fg::blue << "\nChoose your option: "
+                            << rang::style::reset << rang::fg::reset;
   std::cin >> userChoice;
 }
 
@@ -61,6 +64,8 @@ try
 
       if (qcsData.is_open()){
         qcsData << settings;
+
+        std::cout<<"\n|You preferred settings have been saved for future|";
       }
       else
         throw 501;
@@ -72,13 +77,13 @@ try
 }
 
 void QC_Settings::default_encoding_configurer(){
+  clear_screen();
   std::string givenEncoding;
   int selectedOption;
 
   // Showing the current default encoding
-  std::cout<< "The current default is: "<< default_encoding;
-  std::cout<<std::endl;
-  std::cout<<std::endl;
+  std::string currentDef = "The current default is: "+default_encoding;
+  alib::decorateMe(currentDef,1," ",true);
   
   // Taking new encoding from user
   ffmpeg *fmpg = new ffmpeg();
