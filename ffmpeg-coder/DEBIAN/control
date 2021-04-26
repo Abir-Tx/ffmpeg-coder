@@ -3,10 +3,10 @@ Section: misc
 Priority: optional
 Maintainer: abir-tx <abirtx@yandex.com>
 Build-Depends: g++, make
-Standard-Version: 1.0
+Standard-Version: 1.0.0
 Homepage: http://www.github.com/abir-tx/ffmpeg-coder
 Package: ffmpeg-coder
-Version: 1.0
+Version: 1.9.0
 Architecture: all 
 Essential: no
 Size: 20

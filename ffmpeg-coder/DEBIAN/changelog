@@ -1,3 +1,10 @@
+ffmpeg-coder (1.9.0) unstable: urgency=low
+
+* New quick convert menu entry
+* New quick convert settings added
+* Bug fixes
+* Upgrade the source code base
+
 ffmpeg-coder (1.0) stable: urgency=low
 
 * Initial release. 
