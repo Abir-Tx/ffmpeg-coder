@@ -54,3 +54,8 @@ winbuild:
 winrun:
 	echo Running the built program....
 	./${BUILDDIR}/${APPNAME}.exe
+
+.PHONY: winProductionBuild
+winProductionBuild:
+	echo Building release version.....
+	${CC} ${CFLAG} src\ffmpeg-coder.cpp src\frontend_funcs.cpp src\main.cpp src\quickConvertSettings.cpp src\utils.cpp ${INC} -static-libgcc -static-libstdc++ -o ${BUILDDIR}/${APPNAME}.exe
