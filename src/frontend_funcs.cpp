@@ -71,7 +71,7 @@ void settings() {
 void homepage() {
     using namespace std;
 
-    ffmpeg ffmpeg; // Creating ffmpeg object
+    
     int choice;
 
     /* The char goBack variable is used for navigating to the main screen using
@@ -103,13 +103,17 @@ void homepage() {
 
         // Entering into selected option funcs
         if (choice == 1) {
+            ffmpeg *fmpg = new ffmpeg(); // Creating ffmpeg object
             clear_screen();
-            ffmpeg.load_encodes();
-            ffmpeg.show_encodes();
-            ffmpeg.select_encodes();
-            ffmpeg.selected_action();
+            fmpg->load_encodes();
+            fmpg->show_encodes();
+            fmpg->select_encodes();
+            fmpg->selected_action();
+            delete fmpg;
         } else if (choice == 2) {
-            ffmpeg.quickConvert();
+            ffmpeg *fmpg = new ffmpeg(); // Creating ffmpeg object
+            fmpg->quickConvert();
+            delete fmpg;
         } else if (choice == 3) {
             about();
         } else if (choice == 4) {
