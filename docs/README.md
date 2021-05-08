@@ -88,7 +88,7 @@ cd ffmpeg-coder
 
 - **Linux**
 
-Now if you are in linux & have build-essentian installed then just run -
+Now if you are in linux & have build-essentials installed then just run -
 
 ```bash
 make dir
