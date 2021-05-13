@@ -50,6 +50,7 @@ pkgclean:
 
 pkgbuild:
 	makepkg
+	makepkg --printsrcinfo > .SRCINFO
 
 # Windows Configs for make
 .PHONY: winbuild
