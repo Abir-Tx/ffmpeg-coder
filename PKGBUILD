@@ -28,21 +28,23 @@ noextract=()
 md5sums=('SKIP')
 validpgpkeys=()
 
-# prepare() {
-#     cd "$pkgname"
-#     make -f Makefile.own dir
-# }
-#
-# build() {
-#     cd "$pkgname"
-#     make -f Makefile.own build
-# }
-#
-package() {
+prepare() {
 	cd "$pkgname"
 	git switch aur
 	mkdir build && cd build
 	cmake ..
-	make install
-	# install -Dm644 docs/README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}
+
+build() {
+	cd "$pkgname"
+	cd build
+	make
+}
+
+package() {
+	cd "$pkgname"
+	cd build
+	sudo make install
+	cd ..
+	install -Dm644 docs/README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
 }
