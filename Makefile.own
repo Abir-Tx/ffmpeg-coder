@@ -43,7 +43,13 @@ debpackage: build
 	cp bin/ffmpeg-coder ffmpeg-coder/usr/bin/
 	fakeroot dpkg-deb -v --build ffmpeg-coder bin
 	echo The deb package has been created in the bin folder
-	
+
+
+pkgclean:
+	sudo rm -r ffmpeg-coder pkg src/ffmpeg-coder *pkg.tar.zst
+
+pkgbuild:
+	makepkg
 
 # Windows Configs for make
 .PHONY: winbuild

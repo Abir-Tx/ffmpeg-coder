@@ -47,4 +47,6 @@ package() {
 	sudo make install
 	cd ..
 	install -Dm644 docs/README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
 }

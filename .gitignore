@@ -58,3 +58,11 @@ build/*
 ### CMake Patch ###
 # External projects
 *-prefix/
+
+# PKGBUILD
+
+*pkg.tar.zst
+pkg/*
+src/ffmpeg-coder
+src/ffmpeg-coder/*
+ffmpeg-coder/*
