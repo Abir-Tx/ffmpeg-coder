@@ -14,6 +14,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 file(GLOB SOURCES "src/*.cpp")
 add_executable(ffmpeg-coder ${SOURCES})
+install(TARGETS ffmpeg-coder DESTINATION bin)
 
 # add_executable(ffmpeg-coder src/ffmpeg-coder.cpp src/test.cpp)
 

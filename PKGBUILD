@@ -15,8 +15,7 @@ license=('MIT')
 groups=()
 depends=()
 makedepends=(git make gcc)
-checkdepends=()
-optdepends=()
+optdepends=(ffmpeg)
 provides=(ffmpeg-coder)
 conflicts=(ffmpeg-coder)
 replaces=()
@@ -26,20 +25,24 @@ install=
 changelog=
 source=("git+$url")
 noextract=()
-md5sums=(f8b683e201b3e9b1f003fef349f4a971)
+md5sums=('SKIP')
 validpgpkeys=()
 
-prepare() {
-	cd "$pkgname"
-	make -f Makefile.own dir
-}
-
-build() {
-	cd "$pkgname"
-	make -f Makefile.own build
-}
-
+# prepare() {
+#     cd "$pkgname"
+#     make -f Makefile.own dir
+# }
+#
+# build() {
+#     cd "$pkgname"
+#     make -f Makefile.own build
+# }
+#
 package() {
 	cd "$pkgname"
-	cp bin/ffmpeg-coder.o /bin
+	git switch aur
+	mkdir build && cd build
+	cmake ..
+	make install
+	# install -Dm644 docs/README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
 }
