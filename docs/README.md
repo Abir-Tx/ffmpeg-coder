@@ -41,11 +41,13 @@ The user should have really basic knowledge about ffmpeg like how to run ffmpeg 
 - The installer will start & then just follow the onscreen instructions and ffmpeg-coder will be installed on your machine
 - After installation, from the start menu search for **_ffmpeg-coder_** and open the tool.
 
-## Linux (Debian based distros)
+## Linux 
+
+### Debian based distros
 
 This installation process works on ubuntu, kali linux, linux mint, debian and other debian based distros.
 
-### Automatic One Click Process
+#### Automatic One Click Process
 
 - Just copy and paste this script below and **_voila_**
 
@@ -53,7 +55,7 @@ This installation process works on ubuntu, kali linux, linux mint, debian and ot
 wget https://raw.githubusercontent.com/Abir-Tx/ffmpeg-coder/main/scripts/debian_install.sh && chmod +x debian_install.sh &&./debian_install.sh
 ```
 
-### Manual Download Process
+#### Manual Download Process
 
 - First download the **ffmpeg-coder_1.0_all.deb** from the release or from [here](https://github.com/Abir-Tx/ffmpeg-coder/releases/download/v1.0/ffmpeg-coder_1.0_all.deb).
 - Then open terminal to the folder where the .deb file is downloaded.
@@ -65,6 +67,16 @@ sudo apt install ./ffmpeg-coder_1.0_all.deb
 ```
 
 - **_ffmpeg-coder_** should be installed now. Now run `ffmpeg-coder` in your terminal. Sometime if running just after installation the tool might not start. In that case run `ffmpeg-coder` in terminal twice.
+
+### Arch Linux
+
+If you are on Arch Linux you can install ffmpeg-coder from the AUR using a AUR helper easily
+
+```bash
+yay -S ffmpeg-coder
+```
+
+
 
 ## Install from source
 
