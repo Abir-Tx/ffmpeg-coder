@@ -103,14 +103,14 @@ cd ffmpeg-coder
 Now if you are in linux & have build-essentials installed then just run -
 
 ```bash
-make dir
-make build
+make -f Makefile.own dir
+make -f Makefile.own build
 ```
 
 The tool will be compiled to the `bin` folder inside ffmpeg-coder folder. You can also run `make run` to run the tool from there -
 
 ```bash
-make run
+make -f Makefile.own run
 ```
 
 - **Windows**
@@ -118,14 +118,14 @@ make run
 If you are windows user and have **\*GNU Make** installed or configured in your system then run -
 
 ```batch
-make dir
-make winbuild
+make -f Makefile.own dir
+make -f Makefile.own winbuild
 ```
 
 The tool will be compiled to the `bin` folder inside ffmpeg-coder folder. You can also run `make winrun` to run the tool from there -
 
 ```batch
-make winrun
+make -f Makefile.own winrun
 ```
 
 ## Using G++
